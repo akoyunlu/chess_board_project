@@ -1,0 +1,53 @@
+# Chessboard Diagram Assignment Report
+
+[Replace the square-bracketed text with your own text. *Leave everything else unchanged.* 
+Note, the reports are parsed to check word limits, etc. Changing the format may cause 
+the parsing to fail.]
+
+## Feature Extraction (Max 200 Words)
+
+[I have decided to design my feature extraction using a PCA aka principal component analysis approach.
+I got inspired mostly from the labs especially lab 7, and lab 6 and implemented my ideas similarly
+to those ideas. I implemented this approach on the reduce_dimensions function. Started with 
+initializing the array and storing the data. Then moved on to the rest of the code and implemented the PCA method 
+from the labs. Performed eigenvalue decomposition on the covariance matrix using "scipy. linalg" and then extracted the 
+eigenvalues corresponding to the last N-DIMENSION value. I have also used if and else values to check if the 
+length of the model is sufficient or not. After all these conditions were met I proceeded to project my pca_data 
+onto the eigenvectors.I tested this with print (pca_data.shape) and I got the values (6400, 10) which indicated correct 
+training data values which showed that the PCA is working as intended.]
+
+## Square Classifier (Max 200 Words)
+
+[I haven't implemented this funcition, as my percentage was quite high enough with the full- board classifier 
+function on it's own]
+
+## Full-board Classification (Max 200 Words)
+
+[ I used a K-Nearest-Neighbour algorithm to implement my classifier. Got the inspiration from lab 7 but mostly 
+coded my own code. Started with identifying features and training and test data. And then moved on to identifying 
+labels and train_labels using np.unique. I did this because the labels were in string format and I wanted to work with the 
+labels in numerical forms. Then proceeded to measure the distance between train and test data, at first I used cosine but 
+later came to the conclusion that Euclidean worked better for my code. Then moved on to identifying the K-Nearest-Neighbour and 
+getting the labels of the neighbours, I used np.argpartition in this process. Then decided to use weights in order to increase t
+he performance of my classifier. I set the weights of the neighbours on the inverse of the distance and then identified each label 
+for the test data based on the weighted majority of the neighbours. I had two tests to see the accuracy with and without this implementation and saw a slight
+increase in the percentage then decided to proceed on with this technique. I tested with various values for KNN till I found the maximising the value.]
+
+## Performance
+
+My percentage correctness scores (to 1 decimal place) for the development data are as follows.
+
+High quality data:
+
+- Percentage Squares Correct: 98.2%
+- Percentage Boards Correct: 98.2%
+
+Noisy data:
+
+- Percentage Squares Correct: 94.5%
+- Percentage Boards Correct: 94.5%
+
+## Other information (Optional, Max 100 words)
+
+[Optional: highlight any significant aspects of your system that are NOT covered in the
+sections above]
